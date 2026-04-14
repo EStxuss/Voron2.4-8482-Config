@@ -30,7 +30,7 @@ channel: dev
 refresh_interval: 168
 
 [update_manager mainsail]
-path: /home/estxuss/mainsail
+path: /home/biqu/mainsail
 repo: mainsail-crew/mainsail
 channel: stable
 type: web
@@ -38,7 +38,7 @@ type: web
 [update_manager mainsail-config]
 managed_services: klipper
 origin: https://github.com/mainsail-crew/mainsail-config.git
-path: /home/estxuss/mainsail-config
+path: /home/biqu/mainsail-config
 primary_branch: master
 type: git_repo
 
@@ -65,6 +65,12 @@ path: ~/moonraker-timelapse
 origin: https://github.com/mainsail-crew/moonraker-timelapse.git
 managed_services: klipper moonraker
 
+[update_manager print_area_bed_mesh]
+type: git_repo
+path: ~/print_area_bed_mesh
+origin: https://github.com/Turge08/print_area_bed_mesh.git
+is_system_service: False
+
 [update_manager klipper_tmc_autotune]
 type: git_repo
 channel: dev
@@ -79,7 +85,7 @@ install_script: install.sh
 type: git_repo
 origin: https://github.com/Frix-x/klippain-shaketune.git
 path: ~/klippain_shaketune
-virtualenv: /home/estxuss/klippy-env
+virtualenv: /home/biqu/klippy-env
 requirements: requirements.txt
 system_dependencies: system-dependencies.json
 primary_branch: main
@@ -96,6 +102,8 @@ origin: https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging.git
 managed_services: klipper
 primary_branch: main
 
+
+
 [update_manager afc-software]
 type: git_repo
 path: ~/AFC-Klipper-Add-On
@@ -106,16 +114,15 @@ is_system_service: False
 info_tags:
     desc=AFC Klipper Add On
 
-[update_manager klipper-backup]
-type: git_repo
-path: ~/klipper-backup
-origin: https://github.com/Staubgeborener/klipper-backup.git
-managed_services: moonraker
-primary_branch: main
-
 [update_manager goose_purge]
 type: git_repo
 primary_branch: main
 path: ~/goose_purge_macro
 origin: https://github.com/Graylag-PD/Goose-Purge-Macro.git
 managed_services: klipper
+[update_manager klipper-backup]
+type: git_repo
+path: ~/klipper-backup
+origin: https://github.com/Staubgeborener/klipper-backup.git
+managed_services: moonraker
+primary_branch: main
